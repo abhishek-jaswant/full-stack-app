@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management | RBACPro</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/users.css">
+</head>
+
+<body class="users-body">
+
+<div class="users-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="users-sidebar">
+
+    <div class="users-brand">
+      <div class="users-logo">R</div>
+      <div>
+        <h2>RBAC<span>Pro</span></h2>
+        <small>Management System</small>
+      </div>
+    </div>
+
+    <p class="users-menu-label">MAIN MENU</p>
+
+    <nav class="users-nav">
+      <a href="dashboard.html">▦ Dashboard</a>
+      <a href="profile.html">♙ My Profile</a>
+      <a href="resources.html">▤ Resources</a>
+      <a href="users.html" class="active">♧ All Users</a>
+    </nav>
+
+    <div class="users-sidebar-bottom">
+      <div class="users-sidebar-user">
+        <div class="users-avatar" id="sidebarAvatar">A</div>
+        <div>
+          <strong id="sidebarName">Admin</strong>
+          <small id="sidebarRole">Admin</small>
+        </div>
+      </div>
+
+      <button id="logoutBtn" class="users-logout">
+        ↪ Logout
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="users-main">
+
+    <header class="users-topbar">
+      <div>
+        <h1>User Management</h1>
+        <p>Manage users and control account permissions</p>
+      </div>
+
+      <a href="dashboard.html" class="users-back">
+        ← Dashboard
+      </a>
+    </header>
+
+    <section class="users-content">
+
+      <!-- BANNER -->
+      <div class="users-banner">
+        <div>
+          <span>ADMINISTRATION</span>
+          <h2>Manage Your Users</h2>
+          <p>View accounts and manage role-based permissions.</p>
+        </div>
+        <div class="users-banner-icon">♧</div>
+      </div>
+
+      <!-- STATS -->
+      <div class="users-stats">
+
+        <div class="users-stat-card">
+          <span>Total Users</span>
+          <h2 id="totalUsers">0</h2>
+          <small>Registered accounts</small>
+        </div>
+
+        <div class="users-stat-card">
+          <span>Administrators</span>
+          <h2 id="adminCount">0</h2>
+          <small>Admin accounts</small>
+        </div>
+
+        <div class="users-stat-card">
+          <span>Moderators</span>
+          <h2 id="moderatorCount">0</h2>
+          <small>Moderator accounts</small>
+        </div>
+
+        <div class="users-stat-card">
+          <span>Regular Users</span>
+          <h2 id="regularCount">0</h2>
+          <small>User accounts</small>
+        </div>
+
+      </div>
+
+      <!-- USER TABLE -->
+      <section class="users-table-section">
+
+        <div class="users-section-heading">
+          <div>
+            <h2>All Registered Users</h2>
+            <p>View and update user permissions</p>
+          </div>
+
+          <span id="usersTotalBadge">0 Users</span>
+        </div>
+
+        <div class="users-filters">
+
+          <input
+            type="search"
+            id="searchUsers"
+            placeholder="Search by name or email..."
+          >
+
+          <select id="roleFilter">
+            <option value="all">All Roles</option>
+            <option value="admin">Admin</option>
+            <option value="moderator">Moderator</option>
+            <option value="user">User</option>
+          </select>
+
+        </div>
+
+        <p id="message" class="users-message"></p>
+
+        <div class="users-table-wrapper">
+
+          <table class="users-table">
+
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Email Address</th>
+                <th>Role</th>
+                <th>Account</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="usersList">
+              <tr>
+                <td colspan="5" class="table-loading">
+                  Loading users...
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+      <footer class="users-footer">
+        RBACPro © 2026. All rights reserved.
+      </footer>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/users.js"></script>
+
+</body>
+</html>

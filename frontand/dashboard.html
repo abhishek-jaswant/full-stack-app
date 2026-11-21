@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | RBAC Management</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="brand">
+        <div class="brand-icon">R</div>
+        <div>
+          <h2>RBAC<span>Pro</span></h2>
+          <small>Management System</small>
+        </div>
+      </div>
+
+      <div class="sidebar-label">MAIN MENU</div>
+
+      <nav class="sidebar-nav">
+
+        <a href="dashboard.html" class="sidebar-link active">
+          <span>▦</span> Dashboard
+        </a>
+
+        <a href="profile.html" class="sidebar-link">
+          <span>♙</span> My Profile
+        </a>
+
+        <a href="resources.html" class="sidebar-link">
+          <span>▤</span> Resources
+        </a>
+
+        <a href="users.html" id="usersLink" class="sidebar-link hidden">
+          <span>♧</span> All Users
+        </a>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-user">
+          <div class="avatar" id="sidebarAvatar">U</div>
+          <div class="sidebar-user-info">
+            <strong id="sidebarName">User</strong>
+            <small id="sidebarRole">User</small>
+          </div>
+        </div>
+
+        <button id="logoutBtn" class="sidebar-logout">
+          ↪ Logout
+        </button>
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+
+        <div>
+          <button id="menuBtn" class="menu-btn">☰</button>
+          <div class="topbar-heading">
+            <h1>Dashboard</h1>
+            <p>Manage your workspace and activities</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-date" id="currentDate"></div>
+
+          <div class="topbar-avatar" id="topAvatar">U</div>
+        </div>
+
+      </header>
+
+
+      <!-- PAGE CONTENT -->
+      <section class="dashboard-content">
+
+        <!-- WELCOME -->
+        <div class="welcome-banner">
+
+          <div>
+            <p class="welcome-small">WELCOME BACK</p>
+
+            <h2>Hello, <span id="username">User</span> 👋</h2>
+
+            <p>
+              Here's what's happening in your workspace today.
+            </p>
+
+            <div class="welcome-role">
+              Your role:
+              <strong id="userrole">User</strong>
+            </div>
+          </div>
+
+          <div class="welcome-decoration">✦</div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+        <div class="section-heading">
+          <div>
+            <h2>Overview</h2>
+            <p>Quick summary of your account</p>
+          </div>
+        </div>
+
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span>Total Resources</span>
+              <div class="stat-icon blue">▤</div>
+            </div>
+            <h2 id="totalResources">0</h2>
+            <p>Available resources</p>
+          </div>
+
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span>My Resources</span>
+              <div class="stat-icon purple">✎</div>
+            </div>
+            <h2 id="myResources">0</h2>
+            <p>Created by you</p>
+          </div>
+
+
+          <div class="stat-card admin-stat hidden" id="usersStatCard">
+            <div class="stat-top">
+              <span>Total Users</span>
+              <div class="stat-icon green">♧</div>
+            </div>
+            <h2 id="totalUsers">0</h2>
+            <p>Registered accounts</p>
+          </div>
+
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span>Account Status</span>
+              <div class="stat-icon orange">✓</div>
+            </div>
+            <h2 class="status-active">Active</h2>
+            <p>Authenticated account</p>
+          </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+        <div class="section-heading">
+          <div>
+            <h2>Quick Actions</h2>
+            <p>Access your frequently used features</p>
+          </div>
+        </div>
+
+
+        <div class="quick-grid">
+
+          <a href="profile.html" class="quick-card">
+            <div class="quick-icon purple">♙</div>
+            <div>
+              <h3>My Profile</h3>
+              <p>View and update your profile</p>
+            </div>
+            <span>→</span>
+          </a>
+
+
+          <a href="resources.html" class="quick-card">
+            <div class="quick-icon blue">▤</div>
+            <div>
+              <h3>Resources</h3>
+              <p>View and manage resources</p>
+            </div>
+            <span>→</span>
+          </a>
+
+
+          <a href="users.html" id="manageUsersCard" class="quick-card hidden">
+            <div class="quick-icon green">♧</div>
+            <div>
+              <h3>Manage Users</h3>
+              <p>Manage user roles and accounts</p>
+            </div>
+            <span>→</span>
+          </a>
+
+        </div>
+
+
+        <!-- RECENT RESOURCES -->
+        <div class="section-heading recent-heading">
+          <div>
+            <h2>Recent Resources</h2>
+            <p>Latest resources added to your workspace</p>
+          </div>
+
+          <a href="resources.html" class="view-all">View All →</a>
+        </div>
+
+
+        <div class="recent-resources" id="recentResources">
+
+          <div class="empty-state">
+            Loading resources...
+          </div>
+
+        </div>
+
+
+        <p id="message" class="dashboard-message"></p>
+
+        <footer class="dashboard-footer">
+          RBACPro © 2026. All rights reserved.
+        </footer>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | RBACPro</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/resources.css">
+</head>
+
+<body class="resources-body">
+
+<div class="resources-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="resources-sidebar">
+
+    <div class="resources-brand">
+      <div class="resources-logo">R</div>
+      <div>
+        <h2>RBAC<span>Pro</span></h2>
+        <small>Management System</small>
+      </div>
+    </div>
+
+    <p class="resources-menu-label">MAIN MENU</p>
+
+    <nav class="resources-nav">
+      <a href="dashboard.html">▦ Dashboard</a>
+      <a href="profile.html">♙ My Profile</a>
+      <a href="resources.html" class="active">▤ Resources</a>
+      <a href="users.html" id="usersLink" class="hidden">♧ All Users</a>
+        
+    </nav>
+
+    <div class="resources-sidebar-bottom">
+      <div class="resources-user">
+        <div class="user-avatar" id="sidebarAvatar">U</div>
+        <div>
+          <strong id="sidebarName">User</strong>
+          <small id="sidebarRole">User</small>
+        </div>
+      </div>
+
+      <button id="logoutBtn" class="resources-logout">
+        ↪ Logout
+      </button>
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="resources-main">
+
+    <header class="resources-topbar">
+      <div>
+        <h1>Resources</h1>
+        <p>Manage and explore all your resources</p>
+      </div>
+
+      <a href="dashboard.html" class="back-dashboard">
+        ← Dashboard
+      </a>
+    </header>
+
+
+    <section class="resources-content">
+
+      <!-- WELCOME BANNER -->
+      <div class="resources-banner">
+        <div>
+          <span>RESOURCE MANAGEMENT</span>
+          <h2>Your Workspace</h2>
+          <p>Create, manage and explore your resources in one place.</p>
+        </div>
+        <div class="banner-icon">▤</div>
+      </div>
+
+
+      <!-- STATISTICS -->
+      <div class="resource-stats">
+
+        <div class="resource-stat-card">
+          <span>Total Resources</span>
+          <h2 id="totalResources">0</h2>
+          <small>Available resources</small>
+        </div>
+
+        <div class="resource-stat-card">
+          <span>My Resources</span>
+          <h2 id="myResources">0</h2>
+          <small>Created by you</small>
+        </div>
+
+        <div class="resource-stat-card">
+          <span>My Role</span>
+          <h2 id="currentRole">User</h2>
+          <small>Account permission</small>
+        </div>
+
+      </div>
+
+
+      <!-- CREATE RESOURCE -->
+      <section id="createSection" class="resource-create-section hidden">
+
+        <div class="section-heading">
+          <div>
+            <h2>Create New Resource</h2>
+            <p>Add a new resource to your workspace</p>
+          </div>
+        </div>
+
+        <form id="resourceForm">
+
+          <div class="resource-form-grid">
+
+            <div class="resource-field">
+              <label for="title">Resource Title</label>
+              <input
+                id="title"
+                type="text"
+                placeholder="Enter resource title"
+                maxlength="120"
+                required
+              >
+            </div>
+
+            <div class="resource-field">
+              <label for="description">Description</label>
+              <textarea
+                id="description"
+                placeholder="Describe your resource..."
+                maxlength="2000"
+                required
+              ></textarea>
+            </div>
+
+          </div>
+
+          <button type="submit" id="createButton">
+            + Create Resource
+          </button>
+
+        </form>
+
+      </section>
+
+
+      <!-- RESOURCE LIST -->
+      <section class="resource-list-section">
+
+        <div class="resource-list-heading">
+          <div>
+            <h2>All Resources</h2>
+            <p>Browse and manage your resources</p>
+          </div>
+
+          <span id="resourceCount">0 Resources</span>
+        </div>
+
+        <div class="resource-search">
+          <input
+            type="search"
+            id="searchResource"
+            placeholder="Search resources by title or description..."
+          >
+        </div>
+
+        <p id="message" class="resources-message"></p>
+
+        <div id="resourceList" class="resource-grid">
+
+          <div class="resource-empty">
+            Loading resources...
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <footer class="resources-footer">
+        RBACPro © 2026. All rights reserved.
+      </footer>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<!-- EDIT MODAL -->
+<div id="editModal" class="edit-modal hidden">
+
+  <div class="edit-modal-box">
+
+    <h2>Edit Resource</h2>
+    <p>Update your resource information</p>
+
+    <form id="editForm">
+
+      <input type="hidden" id="editId">
+
+      <label for="editTitle">Title</label>
+      <input id="editTitle" maxlength="120" required>
+
+      <label for="editDescription">Description</label>
+      <textarea id="editDescription" maxlength="2000" required></textarea>
+
+      <div class="edit-actions">
+        <button type="button" id="closeEdit" class="cancel-edit">
+          Cancel
+        </button>
+
+        <button type="submit">
+          Save Changes
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<script src="config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/resources.js"></script>
+
+</body>
+</html>
