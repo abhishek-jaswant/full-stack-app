@@ -14,23 +14,37 @@ if (requireLogin()) {
   let currentUser = getSavedUser();
 
   // SHOW PROFILE INFORMATION
-  function displayProfile(user) {
 
-    document.getElementById("sidebarRole").textContent =
-      user.role;
+function displayProfile(user) {
 
-    const initial = user.name.charAt(0).toUpperCase();
+  // Sidebar information
+  document.getElementById("sidebarRole").textContent = user.role;
+  document.getElementById("sidebarName").textContent = user.name;
 
-    document.getElementById("profileAvatar").textContent = initial;
-    document.getElementById("sidebarAvatar").textContent = initial;
+  // Profile banner information
+  document.getElementById("displayName").textContent = user.name;
+  document.getElementById("displayEmail").textContent = user.email;
+  document.getElementById("displayRole").textContent = user.role;
 
-    nameInput.value = user.name;
-    emailInput.value = user.email;
+  // Account information
+  document.getElementById("accountRole").textContent = user.role;
 
-    if (user.role === "admin") {
-      document.getElementById("usersLink").classList.remove("hidden");
-    }
+  // Avatar
+  const initial = user.name.charAt(0).toUpperCase();
+
+  document.getElementById("profileAvatar").textContent = initial;
+  document.getElementById("sidebarAvatar").textContent = initial;
+
+  // Form fields
+  nameInput.value = user.name;
+  emailInput.value = user.email;
+
+  // Admin access
+  if (user.role === "admin") {
+    document.getElementById("usersLink").classList.remove("hidden");
   }
+}
+
 
 
   // LOAD PROFILE
