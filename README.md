@@ -8,15 +8,27 @@ This project is a full stack web application that provides secure user authentic
 
 The application uses JWT (JSON Web Token) for authentication and Role-Based Access Control (RBAC) to manage permissions for different user roles.
 
+🌐Live Demo
+
+Frontend:## 🚀 Live Project
+
+[🌐 Open Project](https://full-stack-frontend-1wmp.onrender.com/)
+
+Backend:## 🚀 Live Project
+
+[🌐 Open Project](https://full-stack-app-ufld.onrender.com)
+
 ## Tech Stack
 
 ### Frontend
+
 - HTML5
 - CSS3
 - JavaScript (ES6+)
 - Fetch API
 
 ### Backend
+
 - Node.js
 - Express.js
 - MongoDB
@@ -42,16 +54,19 @@ The application uses JWT (JSON Web Token) for authentication and Role-Based Acce
 ## User Roles & Permissions
 
 ### Admin
+
 - View all users
 - Update user roles
 - Manage resources
 - Access protected admin routes
 
 ### Moderator
+
 - Update resources
 - Delete resources
 
 ### User
+
 - Register and login
 - View profile
 - Update profile
@@ -140,24 +155,24 @@ http://localhost:3000/api
 
 ### Authentication Routes
 
-| Method  | Endpoint      | Description   |
-|---------|---------------|---------------|
-| POST    | `/api/signup` | Register user |
-| POST    | `/api/login`  | Login user    |
+| Method | Endpoint      | Description   |
+| ------ | ------------- | ------------- |
+| POST   | `/api/signup` | Register user |
+| POST   | `/api/login`  | Login user    |
 
 ### User Routes
 
-| Method | Endpoint             | Access                         |
-|--------|----------------------|--------------------|
-| GET    | `/api/users`         | Admin              |
-| GET    | `/api/users/profile` | Authenticated User |
-| PUT    | `/api/users/profile` | Authenticated User |
-| PATCH  | `/api/users/:id/role`| Admin              |
+| Method | Endpoint              | Access             |
+| ------ | --------------------- | ------------------ |
+| GET    | `/api/users`          | Admin              |
+| GET    | `/api/users/profile`  | Authenticated User |
+| PUT    | `/api/users/profile`  | Authenticated User |
+| PATCH  | `/api/users/:id/role` | Admin              |
 
 ### Resource Routes
 
 | Method | Endpoint             | Access           |
-|--------|----------------------|------------------|
+| ------ | -------------------- | ---------------- |
 | PUT    | `/api/resources/:id` | Admin, Moderator |
 | DELETE | `/api/resources/:id` | Admin, Moderator |
 
