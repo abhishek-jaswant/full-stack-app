@@ -34,7 +34,7 @@ It uses JWT (JSON Web Token) for authentication and Role-Based Access Control (R
 ### 1. Clone Repository
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/abhishek-jaswant/full-stack-app
 ```
 
 ### 2. Navigate to Backend Folder
